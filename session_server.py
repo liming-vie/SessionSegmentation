@@ -1,5 +1,15 @@
 #! /usr/bin/env python
 # -*- coding:utf-8 -*-
+
+'''
+Used for setup the Session Segmentation thrift service
+using the method of https://arxiv.org/abs/1610.03955
+
+In this implementation, use a thrift service of word wegmentation to split sentences. 
+The implementation of la word segmentation service is missing here for a confidentiality principle.
+That codes belongs to Moran (http://mor.ai/).
+'''
+
 import math
 import numpy as np
 import sys
@@ -96,11 +106,11 @@ class SessSegServer:
 
 if __name__ == '__main__':
 	alpha=float(sys.argv[2])
-	port=int(sys.argv[1])
-	method=sys.argv[3]
-	vector_size=int(sys.argv[4])
-	vector_file=sys.argv[5]
-	la_port=int(sys.argv[6])
+	port=int(sys.argv[1])	# port for setup this service
+	method=sys.argv[3]	# [max|avg|sum] corresponding to the similarity calculation methods in paper
+	vector_size=int(sys.argv[4]) # word vector sizes
+	vector_file=sys.argv[5] # word vector dictionary 
+	la_port=int(sys.argv[6]) # port for calling the word segmentation service
 	# init
 	print 'initializing server handler'
 	handler=SessSegServer(vector_file, vector_size, alpha, method, la_port)

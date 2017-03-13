@@ -1,4 +1,9 @@
 #!/bin/bash
+
+###
+# script for kill the session segmentation thrift service
+###
+
 if [ $# != 1 ] ; then 
 	echo -e "\033[31m sh kill.sh port_number\033[0m"
 	exit 1

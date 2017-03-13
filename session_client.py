@@ -1,5 +1,10 @@
 #! /usr/bin/env python
 # -*- coding:utf-8 -*-
+
+'''
+class for using session segmentation service
+'''
+
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')

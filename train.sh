@@ -4,6 +4,12 @@ if [ $# != 6 ] ; then
 	exit 1
 fi
 
+###
+# This script is used for training the mikolov_word2vec model, 
+# and setup a thrift service for calculating the probability 
+# of session segmentation.
+###
+
 # directory for word2vec executable file named "word2vec"
 word2vec_bin_dir=$1
 # training file for word2vec
