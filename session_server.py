@@ -36,7 +36,7 @@ class SessSegServer:
 		self.vectors={}
 		with open(vector_file) as fin:
 			for line in fin:
-				ps=line[:-2].split(' ')
+				ps=line.strip().split(' ')
 				self.vectors[ps[0]]=[float(i) for i in ps[1:]]
 		# init la client
 		self.la_client=LAClient(la_port)
@@ -49,7 +49,7 @@ class SessSegServer:
 			self.similarity = self.heuristic_max
 
 	def sentence_vector(self, line):
-		words=line[:-1].split(' ')
+		words=line.strip().split(' ')
 		return [(self.vectors[i] if i in self.vectors else [1e-5 for j in range(vector_size)]) for i in words]
 
 	def cosine(self, v1, v2):
