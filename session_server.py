@@ -7,7 +7,6 @@ using the method of https://arxiv.org/abs/1610.03955
 
 In this implementation, use a thrift service of word wegmentation to split sentences. 
 The implementation of la word segmentation service is missing here for a confidentiality principle.
-That codes belongs to Moran (http://mor.ai/).
 '''
 
 import math
